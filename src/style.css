@@ -1,0 +1,140 @@
+.react-strip {
+  display: flex;
+  box-sizing: border-box;
+}
+
+.react-strip-wrap {
+  flex-wrap: wrap;
+}
+
+.react-strip-fill {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.react-strip-stretch {
+  box-sizing: border-box;
+}
+
+.react-strip-stretch-initial {
+  flex: 1;
+}
+
+@define-mixin size $name, $size {
+  .react-strip-horizontal > .react-strip-stretch-$(name) {
+    max-width: $(size);
+    max-height: 100%;
+  }
+
+  .react-strip-vertical > .react-strip-stretch-$(name) {
+    max-height: $(size);
+    max-width: 100%;
+  }
+
+  .react-strip-stretch-$(name) {
+    flex: 1 1 $(size);
+  }
+}
+
+@define-mixin dimension $name, $size, $grow: 1, $shrink: 1 {
+  .react-strip-stretch-$(name) {
+    flex: $(grow) $(shrink) $(size);
+  }
+}
+
+.react-strip-align-parallel-start {
+  justify-content: flex-start;
+}
+
+.react-strip-align-parallel-center {
+  justify-content: center;
+}
+
+.react-strip-align-parallel-end {
+  justify-content: flex-end;
+}
+
+.react-strip-align-parallel-space-around {
+  justify-content: space-around;
+}
+
+.react-strip-align-parallel-space-between {
+  justify-content: space-between;
+}
+
+.react-strip-align-perpendicular-start {
+  align-content: flex-start;
+  align-items:   flex-start;
+}
+
+.react-strip-align-perpendicular-center {
+  align-content: center;
+  align-items:   center;
+}
+
+.react-strip-align-perpendicular-end {
+  align-content: flex-end;
+  align-items:   flex-end;
+}
+
+.react-strip-align-perpendicular-stretch {
+  align-content: stretch;
+  align-items:   stretch;
+}
+
+.react-strip-horizontal {
+  flex-direction: row;
+}
+
+.react-strip-horizontal-reverse {
+  flex-direction: row-reverse;
+}
+
+.react-strip-vertical {
+  flex-direction: column;
+}
+
+.react-strip-vertical-reverse {
+  flex-direction: column-reverse;
+}
+
+.react-strip-vertical > .react-strip-vertical {
+  height: 0px;
+}
+
+@mixin size 0,   0%;
+@mixin size 5,   5%;
+@mixin size 10,  10%;
+@mixin size 15,  15%;
+@mixin size 20,  20%;
+@mixin size 25,  25%;
+@mixin size 30,  30%;
+@mixin size 35,  35%;
+@mixin size 40,  40%;
+@mixin size 45,  45%;
+@mixin size 50,  50%;
+@mixin size 55,  55%;
+@mixin size 60,  60%;
+@mixin size 65,  65%;
+@mixin size 70,  70%;
+@mixin size 75,  75%;
+@mixin size 80,  80%;
+@mixin size 85,  85%;
+@mixin size 90,  90%;
+@mixin size 95,  95%;
+@mixin size 100, 100%;
+
+@mixin size 33, 33.33%;
+@mixin size 66, 66.66%;
+
+@mixin dimension auto,     auto;
+@mixin dimension grow,     100%, 1, 1;
+@mixin dimension nogrow,   0%,   0, 1;
+@mixin dimension noshrink, auto, 1, 0;
+
+@for $value from -20 to 20 {
+  .react-strip-order-$(value) {
+    order: $(value);
+  }
+}

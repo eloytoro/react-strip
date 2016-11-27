@@ -1,0 +1,35 @@
+.item-box {
+  color: white;
+  padding: 8px;
+}
+
+.code {
+  color: white;
+  background: #222;
+  padding: 4px;
+  border-radius: 4px;
+}
+
+.options {
+  h3 {
+    color: black;
+  }
+  padding: 10px;
+}
+
+.checkbox {
+  cursor: pointer;
+}
+
+.box {
+  border: 3px solid red;
+  text-align: center;
+  color: black;
+  font-size: 30px;
+}
+
+#root, body, html {
+  margin: 0;
+  font-family: sans-serif;
+  height: 100%;
+}

@@ -1,0 +1,96 @@
+{
+  "name": "react-strip",
+  "version": "1.0.0",
+  "description": "A set of useful components to create responsive and well aligned layouts effortlessly",
+  "main": "index.js",
+  "repository": {
+    "url": "https://github.com/eloytoro/react-strip",
+    "type": "git"
+  },
+  "author": "eloytoro",
+  "license": "MIT",
+  "scripts": {
+    "start": "start-storybook -c ./config/storybook -p 8082 -h 0.0.0.0",
+    "build": "NODE_ENV=production webpack --config config/app/webpack.config.js"
+  },
+  "dependencies": {
+    "lodash": "^4.0.0",
+    "react-screen-size": "^1.0.0"
+  },
+  "peerDependencies": {
+    "react": "^0.14.0"
+  },
+  "devDependencies": {
+    "@kadira/storybook": "^2.32.1",
+    "autoprefixer": "^6.5.3",
+    "babel-core": "^6.18.2",
+    "babel-eslint": "^7.1.1",
+    "babel-jest": "^17.0.0",
+    "babel-loader": "^6.2.7",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.18.0",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-react": "^6.16.0",
+    "babel-preset-stage-3": "^6.17.0",
+    "css-loader": "^0.26.0",
+    "enzyme": "^2.6.0",
+    "eslint": "^3.11.0",
+    "eslint-loader": "^1.6.1",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-react": "^6.7.1",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^17.0.3",
+    "postcss-loader": "^1.1.1",
+    "precss": "^1.4.0",
+    "react": "^15.4.1",
+    "react-addons-test-utils": "^15.3.2",
+    "react-dom": "^15.3.2",
+    "react-test-renderer": "^15.3.2",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.3",
+    "webpack-node-externals": "^1.5.4"
+  },
+  "babel": {
+    "presets": [
+      "react-app"
+    ],
+    "env": {
+      "test": {
+        "plugins": [
+          "transform-es2015-modules-commonjs"
+        ]
+      }
+    }
+  },
+  "eslintConfig": {
+    "parser": "babel-eslint",
+    "env": {
+      "browser": true,
+      "node": true
+    },
+    "settings": {
+      "import/parser": "webpack"
+    },
+    "plugins": [
+      "react"
+    ],
+    "extends": [
+      "eslint:recommended",
+      "plugin:react/recommended"
+    ]
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js"
+    ],
+    "moduleDirectories": [
+      "node_modules",
+      "bower_components",
+      "src"
+    ],
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/config/jest/fileMock.js",
+      "\\.(css|less)$": "identity-obj-proxy"
+    }
+  }
+}
